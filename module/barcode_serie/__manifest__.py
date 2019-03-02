@@ -2,12 +2,12 @@
 {
     'name': "barcode_serie",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': """This module creates a bar code by means of a serial number.""",
 
-    'description': """
-        Long description of module's purpose
+    'description' : 
+    """
+        This module creates a bar code by means of a serial number from 
+        each product selected with the option of unique serial number.
     """,
 
     'author': "Xmarts",
