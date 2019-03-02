@@ -1,0 +1,16 @@
+<odoo>
+  
+  <data>
+    <report
+
+      id="action_generate_barcode"
+      string="Numero de serie / Codigo de barras"
+      model="stock.picking"
+      report_type="qweb-pdf"
+      name="barcode_serie.gen_bar_code_serie"
+      file="barcode_serie.barcode_report"
+      paperformat="barcode_serie.paperformat_barcode"
+      />
+  </data>
+
+</odoo>

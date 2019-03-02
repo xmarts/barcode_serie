@@ -1,0 +1,41 @@
+<odoo>
+	
+	<template id="gen_bar_code_serie">
+        <t t-call="web.html_container">
+			<t t-call="web.basic_layout">
+				<div class="page">
+	                <div class="row">
+	                    <t t-foreach="docs.move_lines" t-as="ml">
+	                        <t t-foreach="ml.move_line_ids" t-as="mls">
+	                        	<div class="col-xs-6 text-center" style="margin-bottom:2em;">
+	                        		<span class="text-center" style="font-size: 18px;" >Numero de orden: <t t-esc="docs.name" /></span><hr/>
+	                        		<span style="font-size: 14px;">Producto: <t t-esc="ml.product_id.name" /></span>
+									<span>
+										<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128',mls.lot_name, 500, 120)" />
+									</span>
+									<br/>
+									<span t-field="mls.lot_name" style="text-align:center; margin-top:4em; font-size:12px;"/>
+								</div>
+							</t>
+						</t>
+					</div>
+				</div>
+			</t>
+		</t>
+	</template>
+		
+	<record id="paperformat_barcode" model="report.paperformat"> 
+            <field name="name">Codigo de barras</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">3</field>
+            <field name="dpi">90</field>
+    </record>
+
+</odoo>
