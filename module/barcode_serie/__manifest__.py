@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "barcode_serie",
+    'name': "Barcode Series",
 
     'summary': """This module creates a bar code by means of a serial number.""",
 
