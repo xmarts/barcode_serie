@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Barcode Series",
+    'name': "barcode_serie",
 
     'summary': """This module creates a bar code by means of a serial number.""",
 
@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','stock'],
 
     # always loaded
     'data': [
