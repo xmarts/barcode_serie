@@ -6,3 +6,4 @@ class caja(models.Model):
 	_inherit = 'product.product'
 
 	caja=fields.Char(string='Caja de zapato')
+
