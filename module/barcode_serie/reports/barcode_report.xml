@@ -2,154 +2,17 @@
 	
 	<template id="gen_bar_code_serie">
         <t t-call="web.html_container">
-			<t t-call="web.basic_layout">
-				<div class="page">
+			
+			
 					
 	                    <t t-foreach="docs.move_lines" t-as="ml">
 	                        <t t-foreach="ml.move_line_ids" t-as="mls">
 	                        	<t t-foreach="mls.product_id" t-as="mlss">
 		                        	<t t-foreach="mlss.attribute_value_ids" t-as="mlssl">
-
-										<!-- <div style="
-								            overflow:hidden;
-								            text-align: center;
-								           margin-bottom:2em;">
-											  
-											  	<div style="
-											  		 display:inline-table;
-										            
-										            padding:15px;
-										            height:100px;
-										            width:100px;
-										            margin:3px;
-										            float: left;
-													">
-												<span t-esc="docs.company_id.numero_tienda"/>
-												</div>
-
-												<div style="
-											  		 display:inline-table;
-										            
-										            padding:15px;
-										            height:100px;
-										            width:100px;
-										            margin:3px;
-										            float: right;
-													">
-
-												<span t-esc="time.strftime('%m/%d/%Y',time.strptime(docs.scheduled_date,'%Y-%m-%d %H:%M:%S'))" style="text-align:right;"/>
-												</div>
-												<br/><br/><br/>
-											
-											  
-										    	
-				                      
-				                        	
-				                        		<div>
-					                        		<div style="float: left;  font-size:20px; font-weight: bold;">
-						                        		<span >
-						                        		<t t-esc="ml.product_id.name" />
-						                        		</span>
-						                        		<span> /
-						                        		<t t-esc="mlssl.name" /></span><br/>
-						                        		<span> /
-						                        		<t t-esc="mlss.default_code" />
-						                        		</span>
-						                        		<img t-attf-src="data:image/*;base64,{{mlss.image_medium}}" style="width: 50%;"/>
-						                        		<br/>
-						                        		<span style="font-size:12px;">
-														<t >Acabado:Caja</t>
-													    </span>
-					                        		</div>
-					                        		 <div style="
-														    transform:rotate(90deg);
-															-ms-transform:rotate(90deg); /* IE 9 */
-															-webkit-transform:rotate(90deg); /* Opera, Chrome, and Safari */
-															position:absolute;
-														    
-														   right:10px;
-														    padding-top:20px;">
-
-												    	<span>
-															<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128',mls.product_id.barcode, 100, 30)" /><br/>
-															<t t-esc="mlss.barcode" />
-														</span>
-											    	</div>
-				                        	    </div>
-
-				                        		
-												
-					                        	<div class="text-center">
-					                        		
-														<span> 
-														<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128',mls.lot_name, 250, 100)" />
-														<span style="font-size:30px;" class="text-right">
-														<t >22</t>
-													    </span>
-														</span>
-														<br/>
-														<span class="text-center" >
-															<t t-esc="mls.lot_name" />
-															
-														</span>
-													 
-											    </div>
-											    </div> -->
-
-										<!-- 	    <div class="row">
-												  
-												  	
-
-												  	
-
-												  <div class="col-xs-12 col-md-8"><span t-esc="docs.company_id.numero_tienda"/>
-												  </div>
-  												  <div class="col-xs-6 col-md-4">
-  												  	<span t-esc="time.strftime('%m/%d/%Y',time.strptime(docs.scheduled_date,'%Y-%m-%d %H:%M:%S'))" class="text-right"/>
-  												  </div>
-												  
-												</div>
-												<div class="row">
-												  <div class="col-md-6"><span >
-						                        		<t t-esc="ml.product_id.name" />
-						                        		</span>
-						                        		<span> /
-						                        		<t t-esc="mlssl.name" /></span><br/>
-						                        		<span> /
-						                        		<t t-esc="mlss.default_code" />
-						                        		</span></div>
-												  <div class="col-md-2">
-												  	<img t-attf-src="data:image/*;base64,{{mlss.image_medium}}" style="width: 10%;"/>
-												  </div>
-												  <div class="col-md-4">
-												  	 <div style="
-														    transform:rotate(90deg);
-															-ms-transform:rotate(90deg); /* IE 9 */
-															-webkit-transform:rotate(90deg); /* Opera, Chrome, and Safari */
-															position:absolute;
-														    
-														   right:10px;
-														    padding-top:20px;">
-
-												    	<span>
-															<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128',mls.product_id.barcode, 100, 30)" /><br/>
-															<t t-esc="mlss.barcode" />
-														</span>
-											    	</div>
-												  </div>
-												</div>
-												<div class="row">
-												  <div class="col-md-6">
-												  	<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128',mls.lot_name, 250, 100)" />
-												  </div>
-												  <div class="col-md-6"><span style="font-size:30px;" class="text-right">
-														<t >22</t>
-													    </span>
-													</div>
-												</div> -->
-
-										
+		                        		<t t-call="web.basic_layout">
+																							
 													<div class="row">
+														<div class="page">	
 										           <div class = 'col-xs-6 text-left'> 
 												           <span> <span t-esc="docs.company_id.numero_tienda"/> </span> 
 												     </div> 
@@ -227,19 +90,19 @@
 												     <div class = 'col-xs-5 text-center'> 
 												           <span>
 													           <span style="font-size:80px; font-weight: bold;" class="text-right">
-															    <t >22</t>
+															    <t t-esc="mlssl.name"/>
 														       </span>
 												           </span> 
 												     </div> 
 												     </div>
 										
-										
+										</div>
 									</t>
 								</t>
 							</t>
 						</t>
 					
-				</div>
+				
 			</t>
 		</t>
 	</template>
